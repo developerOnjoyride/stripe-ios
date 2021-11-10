@@ -241,8 +241,6 @@ public class STPAddCardViewController: STPCoreTableViewController, STPAddressVie
     self.cardImageView = cardImageView
     tableView?.tableHeaderView = cardImageView
       
-    addPoweredByStripeImageView()
-
     let paymentCell = STPPaymentCardTextFieldCell(
       style: .default, reuseIdentifier: "STPAddCardViewControllerPaymentCardTextFieldCell")
     paymentCell.paymentField?.delegate = self
@@ -323,17 +321,6 @@ public class STPAddCardViewController: STPCoreTableViewController, STPAddressVie
     if tableView?.tableFooterView != nil {
       customFooterView = tableView?.tableFooterView
     }
-  }
-
-  private func addPoweredByStripeImageView() {
-    let imageView = UIImageView(image: STPImageLibrary.poweredByStripeImage())
-    imageView.contentMode = .center
-    imageView.frame = CGRect(x: 0, y: 0, width: 120, height: 87)
-    imageView.translatesAutoresizingMaskIntoConstraints = false
-    self.view.addSubview(imageView)
-    imageView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30.0).isActive = true
-    imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-    imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
   }
 
   func setUpCardScanningIfAvailable() {

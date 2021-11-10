@@ -112,11 +112,22 @@ public class STPCoreViewController: UIViewController {
     navigationItem.leftBarButtonItem?.stp_setTheme(navBarTheme)
     navigationItem.rightBarButtonItem?.stp_setTheme(navBarTheme)
     cancelItem?.stp_setTheme(navBarTheme)
-
+    addPoweredByStripeImageView()
     view.backgroundColor = theme.primaryBackgroundColor
 
     setNeedsStatusBarAppearanceUpdate()
   }
+    
+    private func addPoweredByStripeImageView() {
+      let imageView = UIImageView(image: STPImageLibrary.poweredByStripeImage())
+      imageView.contentMode = .center
+      imageView.frame = CGRect(x: 0, y: 0, width: 120, height: 87)
+      imageView.translatesAutoresizingMaskIntoConstraints = false
+      self.view.addSubview(imageView)
+      imageView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30.0).isActive = true
+      imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+      imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+    }
 
   /// :nodoc:
   @objc public override var preferredStatusBarStyle: UIStatusBarStyle {
