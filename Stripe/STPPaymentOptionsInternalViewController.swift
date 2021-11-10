@@ -112,7 +112,7 @@ class STPPaymentOptionsInternalViewController: STPCoreTableViewController, UITab
     cardImageView.image = STPImageLibrary.largeCardFrontImage()
     cardImageView.tintColor = theme.accentColor
     self.cardImageView = cardImageView
-
+    
     tableView?.tableHeaderView = cardImageView
     tableView?.sectionFooterHeight = .leastNormalMagnitude
     tableView?.sectionHeaderHeight = .leastNormalMagnitude

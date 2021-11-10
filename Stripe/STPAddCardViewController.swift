@@ -240,7 +240,7 @@ public class STPAddCardViewController: STPCoreTableViewController, STPAddressVie
     )
     self.cardImageView = cardImageView
     tableView?.tableHeaderView = cardImageView
-
+      
     let paymentCell = STPPaymentCardTextFieldCell(
       style: .default, reuseIdentifier: "STPAddCardViewControllerPaymentCardTextFieldCell")
     paymentCell.paymentField?.delegate = self

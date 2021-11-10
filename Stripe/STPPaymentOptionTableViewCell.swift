@@ -17,11 +17,11 @@ class STPPaymentOptionTableViewCell: UITableViewCell {
 
     // Left icon
     leftIcon.image = STPImageLibrary.addIcon()
-    leftIcon.tintColor = .white
+    leftIcon.tintColor = theme.accentColor
 
     // Title label
     titleLabel.font = theme.font
-    titleLabel.textColor = .white
+    titleLabel.textColor = theme.accentColor
     titleLabel.text = STPLocalizedString("Add New Card…", "Button to add a new credit card.")
 
     // Checkmark icon
@@ -40,11 +40,11 @@ class STPPaymentOptionTableViewCell: UITableViewCell {
 
     // Left icon
     leftIcon.image = paymentOption?.templateImage
-    leftIcon.tintColor = .white
+    leftIcon.tintColor = primaryColorForPaymentOption(withSelected: selected)
 
     // Title label
     titleLabel.font = theme.font
-    titleLabel.textColor = .white
+    titleLabel.textColor = self.theme.accentColor
     titleLabel.attributedText = buildAttributedString(with: paymentOption, selected: selected)
 
     // Checkmark icon
@@ -73,7 +73,7 @@ class STPPaymentOptionTableViewCell: UITableViewCell {
 
     // Title label
     titleLabel.font = theme.font
-    titleLabel.textColor = .white
+    titleLabel.textColor = self.theme.primaryForegroundColor
     titleLabel.text = STPLocalizedString(
       "Online Banking (FPX)", "Button to pay with a Bank Account (using FPX).")
 
