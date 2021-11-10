@@ -155,6 +155,10 @@ public class STPImageLibrary: NSObject {
     return self.safeImageNamed("stp_shipping_form", templateIfAvailable: true)
   }
 
+  @objc class func poweredByStripeImage() -> UIImage {
+    return self.safeImageNamed("stp_powered_by_stripe", templateIfAvailable: false)
+  }
+
   @objc class func safeImageNamed(
     _ imageName: String,
     templateIfAvailable: Bool
